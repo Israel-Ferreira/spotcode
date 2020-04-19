@@ -1,11 +1,12 @@
 import React, {Fragment, useState} from 'react'
+import NavbarFooter from '../../components/common/navbar_footer/index'
 
-const HomeScreen = () => {
+const FavoritesScreen = () => {
   return (
     <Fragment>
-      <div>Home Screen</div>
+      <NavbarFooter/>
     </Fragment>
   )
 }
 
-export default HomeScreen
+export default FavoritesScreen

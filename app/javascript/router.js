@@ -5,6 +5,7 @@ import HomeScreen from './screens/home/index'
 import DiscoveryScreen from './screens/discovery/index'
 import SearchScreen from './screens/search'
 import AlbumScreen from './screens/album'
+import FavoritesScreen from './screens/favorites/index'
 
 
 const Routes = (props) => (
@@ -13,6 +14,7 @@ const Routes = (props) => (
     <Route  exact path="/discovery" component={DiscoveryScreen}  />
     <Route  exact path="/search" component={SearchScreen}  />
     <Route  exact path="/album" component={AlbumScreen}  />
+    <Route  exact path="/favorites" component={FavoritesScreen} />
   </Switch>
 )
 
