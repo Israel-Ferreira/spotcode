@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Heading, Image } from "react-bulma-components";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 const DivVSpaced = styled.div`
   margin-top: 10px;
@@ -8,7 +9,7 @@ const DivVSpaced = styled.div`
 
 const Album = (props) => {
   return (
-    <Fragment>
+    <Link to={`/album/${props.id}`}>
       <Image src={props.cover_url} />
       <DivVSpaced>
         <Heading size={6} className="has-text-white">
@@ -18,7 +19,7 @@ const Album = (props) => {
           {props.artist_name}
         </Heading>
       </DivVSpaced>
-    </Fragment>
+    </Link>
   );
 };
 

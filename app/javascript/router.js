@@ -13,7 +13,7 @@ const Routes = (props) => (
     <Route exact path="/" component={HomeScreen} />
     <Route  exact path="/discovery" component={DiscoveryScreen}  />
     <Route  exact path="/search" component={SearchScreen}  />
-    <Route  exact path="/album" component={AlbumScreen}  />
+    <Route  exact path="/album/:id" component={AlbumScreen}  />
     <Route  exact path="/favorites" component={FavoritesScreen} />
   </Switch>
 )

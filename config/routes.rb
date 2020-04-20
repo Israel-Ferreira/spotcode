@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
 
-  get '*path', to: 'home#index', constraints: ->(req) { req.path !~ /\.(png|jpg|js|css|json)$/ }
-
   concern :favoritable do |options|
     shallow do
       post '/favorite', { to: 'favorites#create', on: :member }.merge(options)
@@ -32,4 +30,6 @@ Rails.application.routes.draw do
       resources :favorites, only: :index
     end
   end
+
+  get '*path', to: 'home#index', constraints: ->(req) { req.path !~ /\.(png|jpg|js|css|json)$/ }
 end
