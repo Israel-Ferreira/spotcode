@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {useParams} from 'react-router-dom'
 
 import AlbumService from '../../services/album'
+import Musics from '../musics/Musics'
 
 const DivVSpaced = styled.div`
   margin-top: 20px;
@@ -15,13 +16,13 @@ const Albums = (props) => {
   const {id} = useParams()
 
 
-  async function getAlbum(){
+  async function fetchAlbum(){
     const resp = await AlbumService.show(id)
     setAlbum(resp.data)
   }
 
   useEffect(() => {
-    getAlbum()
+    fetchAlbum()
   },[])
 
 
@@ -40,6 +41,7 @@ const Albums = (props) => {
           </DivVSpaced>
         </Columns.Column>
       </Columns>
+      <Musics songs={album.songs || []}/>
     </Fragment>
   );
 };
